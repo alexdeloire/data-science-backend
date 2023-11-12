@@ -1,0 +1,9 @@
+Date
+Sexe
+Formation
+Vous avez la nationalité française?
+Quelle est votre nationalité?
+Année obtention du diplôme
+Pour votre dernière année, vous etiez inscrit(e) en :
+Quelle est votre situation actuelle ?
+Vos remarques et commentaires relatifs à votre insertion professionnelle
