@@ -50,12 +50,12 @@ def series_type_description(sr, sr_type):
     elif sr_type == "binary" or sr_type == "category":
         unique_values = sr.unique()
         unique_values = [str(value) for value in unique_values if str(value) != 'nan']
-        return f"unique values = {" | ".join(unique_values)}"
+        return f"unique values = {' | '.join(unique_values)}"
     return ""
 
 def series_infos(sr):
     """
-    return a Series with the type(number, date, categorie, text), the number of missing values, the number of values,
+    return a Series with the type(number, date, categorie, text), summary of values, the number of missing values, the number of values,
     the number of unique values
     :param sr: pandas Series
     """
@@ -70,7 +70,7 @@ def series_infos(sr):
 
 def dataframe_infos(df):
     """
-    return a dataframe with the type(number, date, categorie, text), the number of missing values, the number of values,
+    return a dataframe with the type(number, date, categorie, text), summary of values, the number of missing values, the number of values,
     the number of unique values for each column of the dataframe
     :param df: pandas dataframe
     """
@@ -103,17 +103,18 @@ def combine_dataframe(dataframes: [pd.DataFrame]):
 
 
 
-data2018 = read_excel("data/extraction_finale_enquete_2018DS.xls")
-#data2019 = read_excel("data/extraction_finale_enquete_2019DS.xlsx")
-#data2020 = read_excel("data/extraction_finale_enquete_2020DS.xlsx")
-#data2021 = read_excel("data/extraction_finale_enquete_2021DS.xlsx")
-#data2022 = read_excel("data/extraction_finale_enquete_2022_DS.xlsx")
-#data2023 = read_excel("data/Extraction finale_enquete 2023DS.xls")
+if __name__ == "__main__":
+    #data2018 = read_excel("data/extraction_finale_enquete_2018DS.xls")
+    data2019 = read_excel("data/extraction_finale_enquete_2019DS.xlsx")
+    #data2020 = read_excel("data/extraction_finale_enquete_2020DS.xlsx")
+    #data2021 = read_excel("data/extraction_finale_enquete_2021DS.xlsx")
+    #data2022 = read_excel("data/extraction_finale_enquete_2022_DS.xlsx")
+    #data2023 = read_excel("data/Extraction finale_enquete 2023DS.xls")
 
-df_info_2018 = dataframe_infos(data2018)
-df_info_2018_2 = dataframe_infos(remove_missing_values(data2018))
+    df_info_2019 = dataframe_infos(data2019)
+    df_info_2019_2 = dataframe_infos(remove_missing_values(data2019))
 
-# export to excel
-df_info_2018.to_excel("infos_2018.xlsx")
-#df_info_2018_2.to_excel("infos_2018_2.xlsx")
+    # export to excel
+    df_info_2019.to_excel("infos_2019.xlsx")
+    #df_info_2018_2.to_excel("infos_2018_2.xlsx")
 
