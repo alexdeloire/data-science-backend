@@ -1,17 +1,26 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from contextlib import asynccontextmanager
 
 # Load the environment variables from the .env file
-load_dotenv()
+#load_dotenv()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Executed on startup
+    print("Startup")
+    yield
+    # Executed on shutdown
+    print("Shutdown")
 
 # Create a FastAPI app
 app = FastAPI(
     title="My First FastAPI",
     description="This is my first FastAPI application",
     version="0.1.0",
-    docs_url="/docs"
+    docs_url="/docs",
+    lifespan=lifespan
 )
 
 app.add_middleware(
@@ -22,15 +31,6 @@ app.add_middleware(
     allow_headers=["*"],
     expose_headers=["*"]
 )
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # Executed on startup
-    print("Startup")
-    yield
-    # Executed on shutdown
-    print("Shutdown")
-
 
 # Define a root endpoint
 @app.get("/")
