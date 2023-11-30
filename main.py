@@ -38,10 +38,10 @@ async def read_root():
     return {"message": "Hello, World"}
 
 # Import the routers
-# from app.routers.items_router import item_router
+from app.routers.formation_router import formation_router
 
 
-# app.include_router(item_router)
+app.include_router(formation_router)
 
 
 if __name__ == "__main__":
