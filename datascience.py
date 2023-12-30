@@ -42,14 +42,14 @@ model.add(Dense(10, activation="softmax"))
 model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 
 # Train the model
-model.fit(X_train, y_train, epochs=5, batch_size=32, validation_split=0.2)
+model.fit(X_train, y_train, epochs=15, batch_size=32, validation_split=0.2)
 
 # Evaluate the model
 test_loss, test_accuracy = model.evaluate(X_test, y_test)
 print(f"Test Accuracy: {test_accuracy}")
 
 # Make predictions
-new_reviews = ["Management", "Programmation"]
+new_reviews = ["Management", "Programmation", "C++"]
 new_sequences = tokenizer.texts_to_sequences(new_reviews)
 new_padded_sequences = pad_sequences(new_sequences, maxlen=padded_sequences.shape[1])
 
