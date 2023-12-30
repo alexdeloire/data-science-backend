@@ -105,7 +105,7 @@ def combine_dataframe(dataframes: [pd.DataFrame]):
 
 if __name__ == "__main__":
     #data2018 = read_excel("data/extraction_finale_enquete_2018DS.xls")
-    data2019 = read_excel("data/extraction_finale_enquete_2019DS.xlsx")
+    data2019 = read_excel("../new_data/2012.xls")
     #data2020 = read_excel("data/extraction_finale_enquete_2020DS.xlsx")
     #data2021 = read_excel("data/extraction_finale_enquete_2021DS.xlsx")
     #data2022 = read_excel("data/extraction_finale_enquete_2022_DS.xlsx")
