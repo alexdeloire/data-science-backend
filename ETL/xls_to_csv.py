@@ -6,6 +6,8 @@ folder_path = '../formatted_data'
 column_name_1 = "formation"
 column_name_2 = "quels enseignements vous semblent les plus utiles pour l'exercice de votre metier et votre insertion professionnelle ?"
 
+column_list = [column_name_1, column_name_2]
+
 # Initialize an empty DataFrame to store the concatenated data
 all_data = pd.DataFrame()
 
@@ -19,18 +21,10 @@ for file_name in os.listdir(folder_path):
         df = pd.read_excel(excel_file_path)
 
         # Select two columns from the data frame
-        selected_columns = df[[column_name_1, column_name_2]]
+        selected_columns = df[column_list]
         
         # Remove rows with missing values
-        selected_columns = selected_columns.dropna(subset=[column_name_1, column_name_2])
-
-        # Clean up
-        # selected_columns[column_name_2] = selected_columns[column_name_2].str.replace(',', '')
-        # selected_columns[column_name_2] = selected_columns[column_name_2].str.replace('\r\n', '')
-        # selected_columns[column_name_2] = selected_columns[column_name_2].str.replace('\r', '')
-        # selected_columns[column_name_2] = selected_columns[column_name_2].str.replace('È', 'é')
-        # selected_columns[column_name_2] = selected_columns[column_name_2].str.replace('Ê', 'ê')
-        # selected_columns[column_name_2] = selected_columns[column_name_2].str.replace('Ë', 'ë')
+        selected_columns = selected_columns.dropna(subset=column_list)
 
         # Concatenate the current data with the existing data
         all_data = pd.concat([all_data, selected_columns], ignore_index=True)

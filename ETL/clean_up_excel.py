@@ -25,6 +25,22 @@ for file_name in os.listdir(folder_path):
                 df[column_name] = df[column_name].str.replace('È', 'é')
                 df[column_name] = df[column_name].str.replace('Ê', 'ê')
                 df[column_name] = df[column_name].str.replace('Ë', 'ë')
+                df[column_name] = df[column_name].str.replace('À', 'a')
+                df[column_name] = df[column_name].str.replace('Â', 'a')
+                df[column_name] = df[column_name].str.replace('Î', 'i')
+                df[column_name] = df[column_name].str.replace('Ï', 'i')
+                df[column_name] = df[column_name].str.replace('Ô', 'o')
+                df[column_name] = df[column_name].str.replace('Ù', 'u')
+                df[column_name] = df[column_name].str.replace('Û', 'u')
+                df[column_name] = df[column_name].str.replace('Ç', 'c')
+                df[column_name] = df[column_name].str.replace('Œ', 'oe')
+                df[column_name] = df[column_name].str.replace('Æ', 'ae')
+                df[column_name] = df[column_name].str.replace('Å', 'a')
+                df[column_name] = df[column_name].str.replace('Ø', 'o')
+                df[column_name] = df[column_name].str.replace('ç', 'c')
+                df[column_name] = df[column_name].str.replace('œ', 'oe')
+                df[column_name] = df[column_name].str.replace('æ', 'ae')
+                df[column_name] = df[column_name].str.replace('ø', 'o')
                 df[column_name] = df[column_name].str.replace('_x000D_', '')
                 
                 # Now remove all accents
@@ -34,6 +50,15 @@ for file_name in os.listdir(folder_path):
             new_column_name = column_name.replace('È', 'é')
             new_column_name = new_column_name.replace('Ê', 'ê')
             new_column_name = new_column_name.replace('Ë', 'ë')
+            new_column_name = new_column_name.replace('À', 'a')
+            new_column_name = new_column_name.replace('Â', 'a')
+            new_column_name = new_column_name.replace('Î', 'i')
+            new_column_name = new_column_name.replace('Ï', 'i')
+            new_column_name = new_column_name.replace('Ô', 'o')
+            new_column_name = new_column_name.replace('Ù', 'u')
+            new_column_name = new_column_name.replace('Û', 'u')
+            new_column_name = new_column_name.replace('Ç', 'c')
+            new_column_name = new_column_name.replace('Œ', 'oe')
             
             # Remove accents
             new_column_name = new_column_name.replace('é', 'e')
@@ -54,7 +79,6 @@ for file_name in os.listdir(folder_path):
             new_column_name = new_column_name.replace('Å', 'a')
             new_column_name = new_column_name.replace('ø', 'o')
             new_column_name = new_column_name.replace('Ø', 'o')
-            new_column_name = new_column_name.replace('Å', 'a')
             
             # Lowercase
             new_column_name = new_column_name.lower()
