@@ -3,11 +3,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
-import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Embedding, LSTM, Dense
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
 
 # Load data
 data = pd.read_csv("ETL/output_file.csv")
