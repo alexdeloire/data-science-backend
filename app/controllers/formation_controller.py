@@ -9,6 +9,8 @@ def read_excel(file_path, column_name):
         # Transform the list of formations into a list of dictionaries
         # Dictionary keys are the the values and the values are the count of the formations
         formations = [{key: formations.count(key)} for key in set(formations)]
+        # Merge the dictionaries into one
+        formations = {k: v for d in formations for k, v in d.items()}
         return formations
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error reading Excel file: {str(e)}")
