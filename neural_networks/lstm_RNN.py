@@ -10,7 +10,7 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 
 # Load data
-data = pd.read_csv("ETL/output_file.csv")
+data = pd.read_csv("../ETL/output_file.csv")
 column_name = "quels enseignements vous semblent les plus utiles pour l'exercice de votre metier et votre insertion professionnelle ?"
 
 # Test if there are any NaN values in the column
@@ -34,6 +34,11 @@ with open(tokenizer_path, 'wb') as f:
 # Label encoding for sectors
 label_encoder = LabelEncoder()
 data["SectorEncoded"] = label_encoder.fit_transform(data["formation"])
+
+# Save label encoder
+label_encoder_path = 'label_encoder.pkl'
+with open(label_encoder_path, 'wb') as f:
+    pickle.dump(label_encoder, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(

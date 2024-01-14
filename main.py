@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 #from dotenv import load_dotenv
 from contextlib import asynccontextmanager
+from app.controllers.globals import get_tokenizer, get_encoder, get_model
 
 # Load the environment variables from the .env file
 #load_dotenv()
@@ -10,6 +11,10 @@ from contextlib import asynccontextmanager
 async def lifespan(app: FastAPI):
     # Executed on startup
     print("Startup")
+    app.state.tokenizer = get_tokenizer()
+    app.state.encoder = get_encoder()
+    app.state.model = get_model()
+    print("Loaded model")
     yield
     # Executed on shutdown
     print("Shutdown")
@@ -39,13 +44,13 @@ async def read_root():
 
 # Import the routers
 from app.routers.formation_router import formation_router
-
+from app.routers.model_router import model_router
 
 app.include_router(formation_router)
-
+app.include_router(model_router)
 
 if __name__ == "__main__":
     import uvicorn
 
     # Run the application using Uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=False)
