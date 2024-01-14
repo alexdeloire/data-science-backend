@@ -9,6 +9,9 @@ from tensorflow.keras.layers import Embedding, LSTM, Dense
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 
+
+
+
 # Load data
 data = pd.read_csv("../ETL/output_file.csv")
 column_name = "quels enseignements vous semblent les plus utiles pour l'exercice de votre metier et votre insertion professionnelle ?"

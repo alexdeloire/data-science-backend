@@ -34,6 +34,7 @@ for file_name in os.listdir(folder_path):
                 df[column_name] = df[column_name].str.replace('Â', 'a')
                 df[column_name] = df[column_name].str.replace('Î', 'i')
                 df[column_name] = df[column_name].str.replace('Ï', 'i')
+                df[column_name] = df[column_name].str.replace('Í', 'i')
                 df[column_name] = df[column_name].str.replace('Ô', 'o')
                 df[column_name] = df[column_name].str.replace('Ù', 'u')
                 df[column_name] = df[column_name].str.replace('Û', 'u')
@@ -59,6 +60,7 @@ for file_name in os.listdir(folder_path):
             new_column_name = new_column_name.replace('Â', 'a')
             new_column_name = new_column_name.replace('Î', 'i')
             new_column_name = new_column_name.replace('Ï', 'i')
+            new_column_name = new_column_name.replace('Í', 'i')
             new_column_name = new_column_name.replace('Ô', 'o')
             new_column_name = new_column_name.replace('Ù', 'u')
             new_column_name = new_column_name.replace('Û', 'u')
@@ -87,6 +89,10 @@ for file_name in os.listdir(folder_path):
             
             # Lowercase
             new_column_name = new_column_name.lower()
+            
+            # Specific operations for specific files
+            if file_name == '2020.xls':
+                df.rename(columns={"parmi les enseignements fournis par l'ecole, quels sont ceux qui meriteraient d'itre approfondis ou renforces ?": "parmi les enseignements fournis par l'ecole, quels sont ceux qui meriteraient d'etre approfondis ou renforces ?"}, inplace=True)
             
             df = df.rename(columns={column_name: new_column_name})
 
