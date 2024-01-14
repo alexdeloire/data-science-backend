@@ -11,6 +11,11 @@ for file_name in os.listdir(folder_path):
         print(f'Processing {excel_file_path}...')
         
         df = pd.read_excel(excel_file_path)
+        
+        # Specific operations for specific files
+        if file_name == '2023.xls':
+            # Remove last row
+            df = df[:-1]
 
         # Iterate through each column
         for column_name in df.columns:

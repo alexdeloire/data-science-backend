@@ -12,3 +12,8 @@ def read_excel(file_path, column_name):
         return formations
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error reading Excel file: {str(e)}")
+
+
+if __name__ == "__main__":
+    print(read_excel("formatted_data/2023.xlsx", "formation"))
+    
