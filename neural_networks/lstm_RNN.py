@@ -57,11 +57,6 @@ for dict_model in dict_list:
 
     # Load data
     data = pd.read_csv(full_path)
-    #column_name = "quels enseignements vous semblent les plus utiles pour l'exercice de votre metier et votre insertion professionnelle ?"
-    #column_name = "quels enseignements vous semblent les plus utiles pour l'exercice de votre metier et votre insertion professionnelle ?"
-    #column_name= "parmi les enseignements fournis par l'ecole, quels sont ceux qui meriteraient d'etre approfondis ou renforces ?"
-    #column_name= "quels enseignements, absents de votre formation, vous auraient ete utiles ?"
-    #column_name= "quels enseignements, presents dans votre formation, vous paraissent inutiles ?"
 
     # Test if there are any NaN values in the column
     print(f"Number of NaN values in {column_name}: {data[column_name].isnull().sum()}")
@@ -74,7 +69,7 @@ for dict_model in dict_list:
     tokenizer = Tokenizer()
     tokenizer.fit_on_texts(data[column_name].astype(str).apply(word_tokenize).apply(lambda x: [word for word in x if word.lower() not in stop_words]))
     sequences = tokenizer.texts_to_sequences(data[column_name])
-    padded_sequences = pad_sequences(sequences)  # Specify maxlen
+    padded_sequences = pad_sequences(sequences)  
 
     # Save tokenizer
     #tokenizer_path = 'tokenizer.pkl'
