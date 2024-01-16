@@ -103,7 +103,7 @@ for dict_model in dict_list:
     model.summary()
 
     # Train the model
-    model.fit(X_train, y_train, epochs=1, batch_size=32, validation_split=0.2)
+    model.fit(X_train, y_train, epochs=30, batch_size=32, validation_split=0.2)
 
     # Save the model
     model.save(model_path)
