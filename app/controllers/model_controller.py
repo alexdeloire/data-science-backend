@@ -1,10 +1,5 @@
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import numpy as np
-from app.controllers.globals import (
-    get_tokenizer,
-    get_encoder,
-    get_model
-)
 
 
 def predict_sector(query, tokenizer, label_encoder, model):
@@ -25,18 +20,6 @@ def predict_sector(query, tokenizer, label_encoder, model):
     return predicted_label
 
 
-# Example usage:
 if __name__ == "__main__":
 
-    loaded_tokenizer = get_tokenizer()
-    loaded_encoder = get_encoder()
-    loaded_model = get_model()
-
-    # Input query
-    query = "Management"
-
-    # Get prediction
-    predicted_label = predict_sector(
-        query, loaded_tokenizer, loaded_encoder, loaded_model)
-
-    print(f"Predicted Sector Label: {predicted_label}")
+   pass

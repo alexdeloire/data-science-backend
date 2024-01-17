@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 #from dotenv import load_dotenv
 from contextlib import asynccontextmanager
-from app.controllers.globals import get_tokenizer, get_encoder, get_model
 
 # Load the environment variables from the .env file
 #load_dotenv()
@@ -11,9 +10,6 @@ from app.controllers.globals import get_tokenizer, get_encoder, get_model
 async def lifespan(app: FastAPI):
     # Executed on startup
     print("Startup")
-    app.state.tokenizer = get_tokenizer()
-    app.state.encoder = get_encoder()
-    app.state.model = get_model()
     print("Loaded model")
     yield
     # Executed on shutdown
@@ -30,7 +26,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["https://poly-analyse.onrender.com","http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -45,9 +41,11 @@ async def read_root():
 # Import the routers
 from app.routers.formation_router import formation_router
 from app.routers.model_router import model_router
+from app.routers.kmeans_router import kmeans_router
 
 app.include_router(formation_router)
 app.include_router(model_router)
+app.include_router(kmeans_router)
 
 if __name__ == "__main__":
     import uvicorn
