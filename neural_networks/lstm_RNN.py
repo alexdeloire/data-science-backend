@@ -72,7 +72,6 @@ for dict_model in dict_list:
     padded_sequences = pad_sequences(sequences)  
 
     # Save tokenizer
-    #tokenizer_path = 'tokenizer.pkl'
     with open(tokenizer_path, 'wb') as f:
         pickle.dump(tokenizer, f, protocol=pickle.HIGHEST_PROTOCOL)
 
@@ -81,7 +80,6 @@ for dict_model in dict_list:
     data["SectorEncoded"] = label_encoder.fit_transform(data["formation"])
 
     # Save label encoder
-    #label_encoder_path = 'label_encoder.pkl'
     with open(label_encoder_path, 'wb') as f:
         pickle.dump(label_encoder, f, protocol=pickle.HIGHEST_PROTOCOL)
 

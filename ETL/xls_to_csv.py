@@ -17,7 +17,6 @@ for file_name in os.listdir(folder_path):
     if (file_name.endswith('.xlsx') or file_name.endswith('.xls')) :
         excel_file_path = os.path.join(folder_path, file_name)
         print(f'Processing {excel_file_path}...')
-        
         # Load data from the current Excel file
         df = pd.read_excel(excel_file_path)
 
@@ -45,7 +44,15 @@ column_name_2 = column_name_2.strip()
 column_name_2 = column_name_2.replace(" ", "_")
 column_name_2 = column_name_2.replace(",", "")
 column_name_2 = column_name_2.replace("'", "")
-csv_file_path = '../training_and_graph_data/' + column_name_1 + '_' + column_name_2 + '.csv'
+
+column_name_3 = column_name_3.replace("?", "")
+# Trim leading and trailing whitespace
+column_name_3 = column_name_3.strip()
+column_name_3 = column_name_3.replace(" ", "_")
+column_name_3 = column_name_3.replace(",", "")
+column_name_3 = column_name_3.replace("'", "")
+
+csv_file_path = '../training_and_graph_data/' + column_name_1 + '_' + column_name_2 +'_' + column_name_3 + '.csv'
 all_data.to_csv(csv_file_path, index=False)
 
 print(f'Data from all Excel files have been extracted and saved to {csv_file_path}.')
