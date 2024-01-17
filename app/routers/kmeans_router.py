@@ -7,10 +7,11 @@ kmeans_router = APIRouter(
 )
 
 
-@kmeans_router.get("/useful-lessons")
+@kmeans_router.get("/kmeans/useful-lessons")
 def predict_sector_from_query(formation: str = None):
     try:
-        
+        if formation is None : 
+            formation = "ALL"
         file = get_useful_lessons(formation)
         return file
     except HTTPException as e:
