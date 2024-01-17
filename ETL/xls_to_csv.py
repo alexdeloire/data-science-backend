@@ -5,11 +5,9 @@ folder_path = '../formatted_data'
 
 column_name_1 = "formation"
 #column_name_2 = "quels enseignements vous semblent les plus utiles pour l'exercice de votre metier et votre insertion professionnelle ?"
-column_name_2= "annee obtention du diplome"
-column_name_3= "vos remarques et commentaires relatifs a votre insertion professionnelle"
 #column_name_2= "quels enseignements, absents de votre formation, vous auraient ete utiles ?"
-#column_name_2= "quels enseignements, presents dans votre formation, vous paraissent inutiles ?"
-column_list = [column_name_1, column_name_2,column_name_3]
+column_name_2 = "quels conseils pourriez-vous donner aux etudiants actuellement en formation pour bien choisir leur stage de fin d'etude ? reussir leur insertion professionnelle ?"
+column_list = [column_name_1, column_name_2]
 
 # Initialize an empty DataFrame to store the concatenated data
 all_data = pd.DataFrame()
