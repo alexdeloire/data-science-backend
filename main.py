@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 #from dotenv import load_dotenv
 from contextlib import asynccontextmanager
-from app.controllers.globals import get_tokenizer, get_encoder, get_model
 
 # Load the environment variables from the .env file
 #load_dotenv()
@@ -11,9 +10,6 @@ from app.controllers.globals import get_tokenizer, get_encoder, get_model
 async def lifespan(app: FastAPI):
     # Executed on startup
     print("Startup")
-    app.state.tokenizer = get_tokenizer()
-    app.state.encoder = get_encoder()
-    app.state.model = get_model()
     print("Loaded model")
     yield
     # Executed on shutdown

@@ -14,34 +14,30 @@ def load_tokenizer_and_encoder_and_model(tokenizer_path, encoder_path, model_pat
 
     return tokenizer, encoder, model
 
-# Specify paths to the saved tokenizer and model
-tokenizer_path = 'neural_networks/tokenizer.pkl'
-encoder_path = 'neural_networks/label_encoder.pkl'
-model_path = 'neural_networks/model.keras'
+# Specify paths to the saved tokenizers, encoders and model
 
 modelPolyChatA_path = 'neural_networks/modelPolyChatA.keras'
 modelPolyChatI_path = 'neural_networks/modelPolyChatI.keras'
 modelPolyChatR_path = 'neural_networks/modelPolyChatR.keras'
 modelPolyChatU_path = 'neural_networks/modelPolyChatU.keras'
 
-# Load the global variables
-loaded_tokenizer, loaded_encoder, loaded_model = load_tokenizer_and_encoder_and_model(tokenizer_path, encoder_path, model_path)
+tokenizerPolyChatA_path = 'neural_networks/tokenizerPolyChatA.pkl'
+tokenizerPolyChatI_path = 'neural_networks/tokenizerPolyChatI.pkl'
+tokenizerPolyChatR_path = 'neural_networks/tokenizerPolyChatR.pkl'
+tokenizerPolyChatU_path = 'neural_networks/tokenizerPolyChatU.pkl'
+
+encoderPolyChatA_path = 'neural_networks/labelEncoderPolyChatA.pkl'
+encoderPolyChatI_path = 'neural_networks/labelEncoderPolyChatI.pkl'
+encoderPolyChatR_path = 'neural_networks/labelEncoderPolyChatR.pkl'
+encoderPolyChatU_path = 'neural_networks/labelEncoderPolyChatU.pkl'
+
 
 # Load the global variables for the PolyChat models
-tokenizerPolyChatA, encoderPolyChatA, modelPolyChatA = load_tokenizer_and_encoder_and_model(tokenizer_path, encoder_path, modelPolyChatA_path)
-tokenizerPolyChatI, encoderPolyChatI, modelPolyChatI = load_tokenizer_and_encoder_and_model(tokenizer_path, encoder_path, modelPolyChatI_path)
-tokenizerPolyChatR, encoderPolyChatR, modelPolyChatR = load_tokenizer_and_encoder_and_model(tokenizer_path, encoder_path, modelPolyChatR_path)
-tokenizerPolyChatU, encoderPolyChatU, modelPolyChatU = load_tokenizer_and_encoder_and_model(tokenizer_path, encoder_path, modelPolyChatU_path)
+tokenizerPolyChatA, encoderPolyChatA, modelPolyChatA = load_tokenizer_and_encoder_and_model(tokenizerPolyChatA_path, encoderPolyChatA_path, modelPolyChatA_path)
+tokenizerPolyChatI, encoderPolyChatI, modelPolyChatI = load_tokenizer_and_encoder_and_model(tokenizerPolyChatI_path, encoderPolyChatI_path, modelPolyChatI_path)
+tokenizerPolyChatR, encoderPolyChatR, modelPolyChatR = load_tokenizer_and_encoder_and_model(tokenizerPolyChatR_path, encoderPolyChatR_path, modelPolyChatR_path)
+tokenizerPolyChatU, encoderPolyChatU, modelPolyChatU = load_tokenizer_and_encoder_and_model(tokenizerPolyChatU_path, encoderPolyChatU_path, modelPolyChatU_path)
 
-# Getters for the global variables
-def get_tokenizer():
-    return loaded_tokenizer
-
-def get_encoder():
-    return loaded_encoder
-
-def get_model():
-    return loaded_model
 
 
 # Getters for the PolyChat models
