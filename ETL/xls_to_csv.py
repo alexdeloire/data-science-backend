@@ -5,10 +5,11 @@ folder_path = '../formatted_data'
 
 column_name_1 = "formation"
 #column_name_2 = "quels enseignements vous semblent les plus utiles pour l'exercice de votre metier et votre insertion professionnelle ?"
-column_name_2= "parmi les enseignements fournis par l'ecole, quels sont ceux qui meriteraient d'etre approfondis ou renforces ?"
+column_name_2= "annee obtention du diplome"
+column_name_3= "vos remarques et commentaires relatifs a votre insertion professionnelle"
 #column_name_2= "quels enseignements, absents de votre formation, vous auraient ete utiles ?"
 #column_name_2= "quels enseignements, presents dans votre formation, vous paraissent inutiles ?"
-column_list = [column_name_1, column_name_2]
+column_list = [column_name_1, column_name_2,column_name_3]
 
 # Initialize an empty DataFrame to store the concatenated data
 all_data = pd.DataFrame()
@@ -18,7 +19,6 @@ for file_name in os.listdir(folder_path):
     if (file_name.endswith('.xlsx') or file_name.endswith('.xls')) :
         excel_file_path = os.path.join(folder_path, file_name)
         print(f'Processing {excel_file_path}...')
-        
         # Load data from the current Excel file
         df = pd.read_excel(excel_file_path)
 
@@ -46,7 +46,15 @@ column_name_2 = column_name_2.strip()
 column_name_2 = column_name_2.replace(" ", "_")
 column_name_2 = column_name_2.replace(",", "")
 column_name_2 = column_name_2.replace("'", "")
-csv_file_path = '../training_and_graph_data/' + column_name_1 + '_' + column_name_2 + '.csv'
+
+column_name_3 = column_name_3.replace("?", "")
+# Trim leading and trailing whitespace
+column_name_3 = column_name_3.strip()
+column_name_3 = column_name_3.replace(" ", "_")
+column_name_3 = column_name_3.replace(",", "")
+column_name_3 = column_name_3.replace("'", "")
+
+csv_file_path = '../training_and_graph_data/' + column_name_1 + '_' + column_name_2 +'_' + column_name_3 + '.csv'
 all_data.to_csv(csv_file_path, index=False)
 
 print(f'Data from all Excel files have been extracted and saved to {csv_file_path}.')

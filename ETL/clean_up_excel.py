@@ -90,12 +90,14 @@ for file_name in os.listdir(folder_path):
             # Lowercase
             new_column_name = new_column_name.lower()
             
-            # Specific operations for specific files
-            if file_name == '2020.xls':
-                df.rename(columns={"parmi les enseignements fournis par l'ecole, quels sont ceux qui meriteraient d'itre approfondis ou renforces ?": "parmi les enseignements fournis par l'ecole, quels sont ceux qui meriteraient d'etre approfondis ou renforces ?"}, inplace=True)
-            
             df = df.rename(columns={column_name: new_column_name})
 
+        # Specific operations for specific files
+        if file_name == '2020.xls':
+            df.rename(columns={"parmi les enseignements fournis par l'ecole, quels sont ceux qui meriteraient d'itre approfondis ou renforces ?": "parmi les enseignements fournis par l'ecole, quels sont ceux qui meriteraient d'etre approfondis ou renforces ?"}, inplace=True)
+            df.rename(columns={"annee obtention du diplume": "annee obtention du diplome"}, inplace=True)
+            df.rename(columns={"vos remarques et commentaires relatifs ‡ votre insertion professionnelle": "vos remarques et commentaires relatifs a votre insertion professionnelle"}, inplace=True)
+            
         # Get the name before the extension
         new_file_name = file_name.split('.')[0]
         # Save the modified DataFrame back to Excel
