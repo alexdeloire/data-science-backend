@@ -15,6 +15,12 @@ Activate virtual environment (Linux):
 source env/bin/activate
 ```
 
+Activate virtual environment (Windows):
+
+```bash
+.\env\Scripts\activate
+```
+
 Install dependencies:
 
 ```bash

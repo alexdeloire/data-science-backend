@@ -43,6 +43,7 @@ from app.routers.formation_router import formation_router
 from app.routers.model_router import model_router
 from app.routers.kmeans_router import kmeans_router
 
+
 app.include_router(formation_router)
 app.include_router(model_router)
 app.include_router(kmeans_router)
