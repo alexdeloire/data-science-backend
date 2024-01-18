@@ -33,17 +33,17 @@ encoderPolyChatU_path = 'neural_networks/labelEncoderPolyChatU.pkl'
 
 
 # Load the global variables for the PolyChat models
-# tokenizerPolyChatA, encoderPolyChatA, modelPolyChatA = load_tokenizer_and_encoder_and_model(tokenizerPolyChatA_path, encoderPolyChatA_path, modelPolyChatA_path)
-# tokenizerPolyChatI, encoderPolyChatI, modelPolyChatI = load_tokenizer_and_encoder_and_model(tokenizerPolyChatI_path, encoderPolyChatI_path, modelPolyChatI_path)
-# tokenizerPolyChatR, encoderPolyChatR, modelPolyChatR = load_tokenizer_and_encoder_and_model(tokenizerPolyChatR_path, encoderPolyChatR_path, modelPolyChatR_path)
-# tokenizerPolyChatU, encoderPolyChatU, modelPolyChatU = load_tokenizer_and_encoder_and_model(tokenizerPolyChatU_path, encoderPolyChatU_path, modelPolyChatU_path)
+tokenizerPolyChatA, encoderPolyChatA, modelPolyChatA = load_tokenizer_and_encoder_and_model(tokenizerPolyChatA_path, encoderPolyChatA_path, modelPolyChatA_path)
+tokenizerPolyChatI, encoderPolyChatI, modelPolyChatI = load_tokenizer_and_encoder_and_model(tokenizerPolyChatI_path, encoderPolyChatI_path, modelPolyChatI_path)
+tokenizerPolyChatR, encoderPolyChatR, modelPolyChatR = load_tokenizer_and_encoder_and_model(tokenizerPolyChatR_path, encoderPolyChatR_path, modelPolyChatR_path)
+tokenizerPolyChatU, encoderPolyChatU, modelPolyChatU = load_tokenizer_and_encoder_and_model(tokenizerPolyChatU_path, encoderPolyChatU_path, modelPolyChatU_path)
 
 
 # Load the global variables for the PolyChat models
-tokenizerPolyChatA, encoderPolyChatA, modelPolyChatA = None, None, None
-tokenizerPolyChatI, encoderPolyChatI, modelPolyChatI = None, None, None
-tokenizerPolyChatR, encoderPolyChatR, modelPolyChatR = None, None, None
-tokenizerPolyChatU, encoderPolyChatU, modelPolyChatU = None, None, None
+# tokenizerPolyChatA, encoderPolyChatA, modelPolyChatA = None, None, None
+# tokenizerPolyChatI, encoderPolyChatI, modelPolyChatI = None, None, None
+# tokenizerPolyChatR, encoderPolyChatR, modelPolyChatR = None, None, None
+# tokenizerPolyChatU, encoderPolyChatU, modelPolyChatU = None, None, None
 
 
 
