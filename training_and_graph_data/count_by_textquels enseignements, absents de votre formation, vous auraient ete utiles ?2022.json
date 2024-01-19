@@ -1,0 +1,38 @@
+{
+  "Materiaux (MAT)": {
+    "true": 57,
+    "false": 56
+  },
+  "Eau et Genie Civil (EGC - apprentissage)": {
+    "true": 22,
+    "false": 30
+  },
+  "Genie Biologique et Agroalimentaires (GBA)": {
+    "true": 37,
+    "false": 86
+  },
+  "Mecanique et Interactions (MI)": {
+    "true": 40,
+    "false": 32
+  },
+  "Informatique et Gestion (IG)": {
+    "true": 38,
+    "false": 70
+  },
+  "Microelectronique Et Automatique (MEA)": {
+    "true": 56,
+    "false": 77
+  },
+  "Mecanique Structures Industrielles (MSI - apprentissage)": {
+    "true": 16,
+    "false": 29
+  },
+  "Sciences et Technologies de l'Eau (STE)": {
+    "true": 46,
+    "false": 45
+  },
+  "Systemes Embarques (SE - apprentissage)": {
+    "true": 11,
+    "false": 36
+  }
+}

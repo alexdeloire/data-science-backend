@@ -32,8 +32,10 @@ formation_router = APIRouter(
 def get_count(year: int, column: str = "formation"):
     file_path = f"formatted_data/{year}.xlsx"
     try:
-        response = count_response(file_path, column)
-        return {"count": response}
+        json_file_path = "training_and_graph_data/count_response" + str(year) + ".json"
+
+        response = count_response(file_path, column, json_file_path)
+        return response
     except HTTPException as e:
         raise e
 
@@ -54,7 +56,9 @@ def get_sexe_graph(year: int):
        column_name="genre"
        if year == 2018 or year == 2019:
            column_name="sexe"
-       sexe = count_sexe_by_formation(file_path,column_name)
+       json_file_path = "training_and_graph_data/count_sexe_by_formation" + str(year) + ".json"
+
+       sexe = count_sexe_by_formation(file_path,column_name, json_file_path)
        return {"sexe": sexe}
     except HTTPException as e:
         raise e
@@ -70,8 +74,10 @@ def get_satisfaction_graph(year: int):
     if year == 2020:
         column_name="globalement,sur une echelle allant de 1 ‡ 5, ites-vous satisfait(e) de votre formation ‡ polytech montpellier ? "
         
+    json_file_path = "training_and_graph_data/satisfaction_graph" + str(year) + ".json"
+        
     try:
-       satisfaction = count_by_formation(file_path, column_name)
+       satisfaction = count_by_formation(file_path, column_name, json_file_path)
        return {"satisfaction": satisfaction}
     except HTTPException as e:
         raise e
@@ -89,8 +95,9 @@ def get_importance_graph(year: int):
     if year == 2020 :
         column_name="les elements suivants vous semblent-ils avoir joue un rule dans votre recrutement? - la formation"
         
+    json_file_path = "training_and_graph_data/importance_graph" + str(year) + ".json"
     try:
-       satisfaction = count_by_formation(file_path, column_name)
+       satisfaction = count_by_formation(file_path, column_name, json_file_path)
        return {"importance": satisfaction}
     except HTTPException as e:
         raise e
@@ -111,9 +118,11 @@ def get_importance_graph(year: int):
         column_name="les elements suivants vous semblent-ils avoir joue un role dans votre recrutement? [la reputation de la filiere de formation]"
     if year == 2018 :
         column_name="les elements suivants vous semblent-ils avoir joue un role dans votre recrutement sur ce 1er emploi? [la reputation du departement]"
-        
+    
+    json_file_path = "training_and_graph_data/reputation_graph" + str(year) + ".json"
+
     try:
-       satisfaction = count_by_formation(file_path, column_name)
+       satisfaction = count_by_formation(file_path, column_name, json_file_path)
        return {"reputation": satisfaction}
     except HTTPException as e:
         raise e
@@ -124,8 +133,9 @@ def get_count_by_text_response(year: int, question: str):
     file_path = f"formatted_data/{year}.xlsx"
     print(question)
     print(file_path)
+    json_file_path = "training_and_graph_data/count_by_text"+ question + str(year) + ".json"
     try:
-       count = count_by_text_response(file_path, question)
+       count = count_by_text_response(file_path, question, json_file_path)
        return {"count": count}
     except HTTPException as e:
         raise e   
@@ -187,7 +197,7 @@ def get_wordcloud(filiere: str, modele: int):
             text = pattern.sub(representative_terms[category], text)
 
     # Enlever les stopwords et le mot 'cour'
-    filtered_text = ' '.join(word.lower() for word in text.split() if word.lower() not in stop_words and word.lower() != 'cour' and word.lower() != 'cours'and word.lower() != 'enseignements'and word.lower() != 'plus')
+    filtered_text = ' '.join(word.lower() for word in text.split() if word.lower() not in stop_words and word.lower() != 'cour' and word.lower() != 'cours'and word.lower() != 'enseignements'and word.lower() != 'plus'and word.lower() != 'a')
     
     # Obtenir les fréquences des mots
     word_frequencies = WordCloud().process_text(filtered_text)

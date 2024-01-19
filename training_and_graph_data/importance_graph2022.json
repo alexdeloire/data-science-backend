@@ -1,0 +1,55 @@
+{
+  "Materiaux (MAT)": {
+    "3.0": 4,
+    "4.0": 5,
+    "5.0": 3,
+    "1.0": 1
+  },
+  "Eau et Genie Civil (EGC - apprentissage)": {
+    "3.0": 3,
+    "0.0": 1,
+    "5.0": 1,
+    "2.0": 1
+  },
+  "Genie Biologique et Agroalimentaires (GBA)": {
+    "0.0": 1,
+    "3.0": 3,
+    "4.0": 10,
+    "5.0": 9,
+    "1.0": 1,
+    "2.0": 1
+  },
+  "Mecanique et Interactions (MI)": {
+    "5.0": 3,
+    "0.0": 2,
+    "3.0": 5,
+    "4.0": 4
+  },
+  "Informatique et Gestion (IG)": {
+    "5.0": 6,
+    "3.0": 2,
+    "4.0": 1
+  },
+  "Microelectronique Et Automatique (MEA)": {
+    "2.0": 1,
+    "4.0": 4,
+    "5.0": 4,
+    "1.0": 1
+  },
+  "Mecanique Structures Industrielles (MSI - apprentissage)": {
+    "5.0": 3,
+    "4.0": 1
+  },
+  "Sciences et Technologies de l'Eau (STE)": {
+    "2.0": 2,
+    "4.0": 6,
+    "3.0": 3,
+    "5.0": 4,
+    "0.0": 1
+  },
+  "Systemes Embarques (SE - apprentissage)": {
+    "5.0": 2,
+    "4.0": 1,
+    "2.0": 1
+  }
+}

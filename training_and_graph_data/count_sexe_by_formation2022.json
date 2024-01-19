@@ -1,0 +1,38 @@
+{
+  "Materiaux (MAT)": {
+    "Femme": 36,
+    "Homme": 77
+  },
+  "Eau et Genie Civil (EGC - apprentissage)": {
+    "Homme": 41,
+    "Femme": 11
+  },
+  "Genie Biologique et Agroalimentaires (GBA)": {
+    "Femme": 106,
+    "Homme": 17
+  },
+  "Mecanique et Interactions (MI)": {
+    "Homme": 59,
+    "Femme": 13
+  },
+  "Informatique et Gestion (IG)": {
+    "Homme": 86,
+    "Femme": 22
+  },
+  "Microelectronique Et Automatique (MEA)": {
+    "Homme": 116,
+    "Femme": 17
+  },
+  "Mecanique Structures Industrielles (MSI - apprentissage)": {
+    "Homme": 42,
+    "Femme": 3
+  },
+  "Sciences et Technologies de l'Eau (STE)": {
+    "Homme": 49,
+    "Femme": 42
+  },
+  "Systemes Embarques (SE - apprentissage)": {
+    "Homme": 41,
+    "Femme": 6
+  }
+}
