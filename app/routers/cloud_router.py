@@ -43,7 +43,7 @@ def get_wordcloud(filiere: str, modele: int):
     word_frequencies = WordCloud().process_text(filtered_text)
 
     # Sélectionner les 5 mots les plus fréquents
-    top_5_words = dict(sorted(word_frequencies.items(), key=lambda item: item[1], reverse=True)[:5])
+    top_5_words = dict(sorted(word_frequencies.items(), key=lambda item: item[1], reverse=True)[:10])
     print(top_5_words)
     # Retourner les 5 mots les plus fréquents au format JSON
     return top_5_words
